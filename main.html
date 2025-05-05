@@ -1,64 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Sorted Bands</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: url('https://www.transparenttextures.com/patterns/wood-pattern.png');
-      margin: 0;
-      padding: 2rem;
-      display: flex;
-      justify-content: center;
-      background-size: cover;
-    }
-
-    ul#band {
-      list-style: none;
-      padding: 0;
-      width: 300px;
-      background: white;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-    ul#band li {
-      padding: 1rem;
-      border-bottom: 1px solid #eee;
-    }
-
-    ul#band li::before {
-      content: "▪ ";
-      color: black;
-      margin-right: 0.5rem;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alphabetical Article Sorter</title>
 </head>
 <body>
-  <ul id="band"></ul>
-
-  <script>
-    const bands = [
-      'The Plot in You', 'The Devil Wears Prada', 'Pierce the Veil',
-      'Norma Jean', 'The Bled', 'Say Anything', 'The Midway State',
-      'We Came as Romans', 'Counterparts', 'Oh, Sleeper',
-      'A Skylit Drive', 'Anywhere But Here', 'An Old Dog'
-    ];
-
-    function stripLeadingArticle(title) {
-      return title.replace(/^(a |an |the )/i, '').trim();
-    }
-
-    const sorted = bands
-      .slice() // don't mutate original
-      .sort((a, b) => stripLeadingArticle(a).localeCompare(stripLeadingArticle(b)));
-
-    const ul = document.getElementById('band');
-    sorted.forEach(name => {
-      const li = document.createElement('li');
-      li.textContent = name;
-      ul.appendChild(li);
-    });
-  </script>
+    <h1>Article List</h1>
+    <ul id="band"></ul>
+    
+    <script src="script.js"></script>
 </body>
 </html>
