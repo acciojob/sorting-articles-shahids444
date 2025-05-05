@@ -12,7 +12,8 @@ function sortBands(bands) {
             return name.replace(/^(a|an|the)\s+/i, '').toLowerCase();
         };
         
-        return getName(a) > getName(b) ? 1 : -1;
+        // Correct sorting logic
+        return getName(a) < getName(b) ? -1 : 1; // Change to negative for correct sorting
     });
 }
 
